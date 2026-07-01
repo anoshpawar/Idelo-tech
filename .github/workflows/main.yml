@@ -15,32 +15,16 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: 17
 
-      - name: Make gradlew executable
+      - name: Grant permission
         run: chmod +x ./gradlew
 
       - name: Build APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --stacktrace --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: APK
           path: app/build/outputs/apk/debug/*.apk
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
