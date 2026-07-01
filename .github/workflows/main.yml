@@ -16,10 +16,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build APK
+    - - name: Build APK
   run: |
-    ./gradlew clean
-    ./gradlew assembleDebug --stacktrace
+    gradle clean
+    gradle assembleDebug --stacktrace --no-daemon
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
