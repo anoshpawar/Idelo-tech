@@ -20,19 +20,19 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Check files
+      - name: Grant permission
         run: |
           ls -la
-          ls -la app
+          chmod +x ./gradlew || true
 
       - name: Clean
-        run: gradle clean
+        run: ./gradlew clean --no-daemon
 
       - name: Build APK
-        run: gradle assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: APK
+          name: app-debug-apk
           path: app/build/outputs/apk/debug/*.apk
