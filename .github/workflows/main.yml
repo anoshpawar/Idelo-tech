@@ -20,11 +20,10 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Setup Gradle
+      - name: Install Gradle
         uses: gradle/actions/setup-gradle@v4
-
-      - name: Clean
-        run: gradle clean
+        with:
+          validate-wrappers: false
 
       - name: Build APK
         run: gradle assembleDebug
