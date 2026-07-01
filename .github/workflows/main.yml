@@ -15,15 +15,13 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: '17'
 
       - name: Grant permission
-        run: chmod +x ./gradlew
+        run: chmod +x gradlew
 
-     - name: Build APK
-    run: |
-     chmod +x gradlew
-     ./gradlew clean assembleDebug --stacktrace
+      - name: Build APK
+        run: ./gradlew clean assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
