@@ -1,0 +1,6 @@
+{
+  "name": "IdeloChat",
+  "description": "IdeloChat is a secure, high-fidelity real-time chat, voice and video calling application like WhatsApp with Firebase backend and WebRTC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
